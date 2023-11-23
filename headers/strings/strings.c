@@ -1,5 +1,6 @@
 #include "strings.h"
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 const char capital_alphabets = 'A'; // 65 - 90
@@ -29,24 +30,21 @@ void toUpper(char *text, int s)
     }
 }
 
-int concatenateIntegers(int a, int b)
+int concatInt(int num1, int num2)
 {
-    int temp = b;
-    int count = 0;
-    while (temp != 0)
-    {
-        temp /= 10;
-        count++;
-    }
+    char strNum1[20];
+    char strNum2[20];
 
-    // Concatenate the integers using arithmetic operations
-    int multiplier = 1;
-    for (int i = 0; i < count; i++)
-    {
-        multiplier *= 10;
-    }
+    sprintf(strNum1, "%d", num1);
+    sprintf(strNum2, "%d", num2);
 
-    return a * multiplier + b;
+    char result[40];
+    strcpy(result, strNum1);
+    strcat(result, strNum2);
+
+    int concatenatedInt = atoi(result);
+
+    return concatenatedInt;
 }
 
 int asciiToInt(char a)

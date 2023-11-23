@@ -19,4 +19,4 @@
 
 # To Run
 
-    gcc project.c ./headers/header.c ./headers arrays/arrays.c ./headers/strings/strings c ; ./a
+    gcc project.c ./headers/header.c ./headers/arrays/arrays.c ./headers/strings/strings.c ./headers/file/file.c  ; ./a

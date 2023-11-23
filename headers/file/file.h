@@ -3,10 +3,12 @@
 struct Recepie
 {
     int id;
-    char title[1];
-    char indegridients[1];
-    char steps[1];
+    char title[30];
+    char indegridients[100];
+    char steps[100];
 };
 void readData(struct Recepie *recipies);
+int concatInt(int num1, int num2);
+int readTotalElements(struct Recepie *recipies);
 
 #endif
