@@ -9,6 +9,5 @@ struct Recepie
 };
 void readData(struct Recepie *recipies);
 int concatInt(int num1, int num2);
-int readTotalElements(struct Recepie *recipies);
 
 #endif

@@ -5,28 +5,6 @@
 const char INDEGRIDIENTS_PATH[] = "./data/ingredients.txt";
 const char RECIPIE_PATH[] = "./data/ingredients.txt";
 
-int readTotalElements(struct Recepie *recipies)
-{
-    FILE *fptr;
-    int elements = 0;
-    fptr = fopen(INDEGRIDIENTS_PATH, "r");
-    if (fptr == NULL)
-    {
-        printf("Error! Not able to open the file.\n\n");
-    }
-    else
-    {
-        char buffer[1000];
-        for (int mainIndex = 0; fgets(buffer, sizeof(buffer), fptr) != NULL; mainIndex++)
-        {
-            elements++;
-        }
-    }
-
-    fclose(fptr);
-    return elements / 4; //  one recipe is in 4 lines
-}
-
 void readData(struct Recepie *recipies)
 {
     FILE *fptr;
@@ -41,7 +19,9 @@ void readData(struct Recepie *recipies)
     {
         char buffer[1000];
 
-        for (int idsIndex = 0; fgets(buffer, sizeof(buffer), fptr) != NULL;)
+        int idsIndex = 0;
+        int titleIndex = 0;
+        while (fgets(buffer, sizeof(buffer), fptr) != NULL)
         {
             if (buffer[0] == 'i' && buffer[1] == 'd') // for line id
             {
@@ -70,12 +50,32 @@ void readData(struct Recepie *recipies)
                     idsIndex++;
                 }
             }
+
+            if (buffer[0] == 't' && buffer[1] == 'i') // for line id
+            {
+                int s2 = 6;                               // id:
+                for (int w2 = 0; buffer[s2] != ','; w2++) // id:1,
+                {
+                    // printf("{%d} %c>%d", s, buffer[s], asciiToInt(buffer[s]));
+                    if (buffer[s2] == '.')
+                    {
+                        recipies[titleIndex].title[w2] = ' ';
+                    }
+                    else
+                    {
+                        recipies[titleIndex].title[w2] = buffer[s2];
+                    }
+                    s2++;
+                }
+                titleIndex++;
+            }
         }
     }
 
     for (int i = 0; i < 4; i++)
     {
         printf("\n > > > >%d", recipies[i].id);
+        printf("\n > > > >%s", recipies[i].title);
     }
 
     fclose(fptr);

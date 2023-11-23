@@ -1,6 +1,6 @@
 # Recipes Predict App
 
-    The Recipe Predict app for your kitchen companion.It is designed to make meal planning and cooking effortless. Using innovative predictive technology and a vast recipe database, it helps users discover recipes based on ingredients available at your home.
+The Recipe Predict app for your kitchen companion.It is designed to make meal planning and cooking effortless. Using innovative predictive technology and a vast recipe database, it helps users discover recipes based on ingredients available at your home.
 
 ### Key Features:
 
