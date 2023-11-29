@@ -4,5 +4,8 @@
 void mainMenu();
 void SearchMenu();
 void FaveroutMenu();
+void AutoRecMenu();
+void SettingsMenu();
+void AboutMenu();
 
 #endif

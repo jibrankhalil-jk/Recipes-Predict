@@ -7,6 +7,9 @@
 
 void faveroute(int *mainmenu);
 void searchrecepie(int *mainmenu);
+void AutoRec(int *mainmenu);
+void settings(int *mainmenu);
+void About(int *mainmenu);
 
 int main()
 {
@@ -24,6 +27,7 @@ int main()
             break;
         case '2':
             isselected_menu_valid = 1;
+            AutoRec(&isselected_menu_valid);
             break;
         case '3':
             isselected_menu_valid = 1;
@@ -31,9 +35,11 @@ int main()
             break;
         case '9':
             isselected_menu_valid = 1;
+            settings(&isselected_menu_valid);
             break;
         case '0':
             isselected_menu_valid = 1;
+            About(&isselected_menu_valid);
             break;
         default:
             break;
@@ -72,6 +78,35 @@ void faveroute(int *mainmenu)
     }
 }
 
+void AutoRec(int *mainmenu)
+{
+    char selected_menu;
+    int isselected_menu_valid = 0;
+    while (isselected_menu_valid == 0)
+    {
+        AutoRecMenu();
+        scanf(" %c", &selected_menu);
+        switch (selected_menu)
+        {
+        case '1':
+            isselected_menu_valid = 1;
+            break;
+        case '2':
+            isselected_menu_valid = 1;
+            break;
+        case '3':
+            isselected_menu_valid = 1;
+            break;
+        case '0':
+            isselected_menu_valid = 1;
+            *mainmenu = 0;
+            break;
+        default:
+            break;
+        }
+    }
+}
+
 void searchrecepie(int *mainmenu)
 {
     char selected_menu;
@@ -89,6 +124,58 @@ void searchrecepie(int *mainmenu)
             isselected_menu_valid = 1;
             break;
         case '3':
+            isselected_menu_valid = 1;
+            break;
+        case '0':
+            isselected_menu_valid = 1;
+            *mainmenu = 0;
+            break;
+        default:
+            break;
+        }
+    }
+}
+
+void settings(int *mainmenu)
+{
+    char selected_menu;
+    int isselected_menu_valid = 0;
+    while (isselected_menu_valid == 0)
+    {
+        SettingsMenu();
+        scanf(" %c", &selected_menu);
+        switch (selected_menu)
+        {
+        case '1':
+            isselected_menu_valid = 1;
+            break;
+        case '2':
+            isselected_menu_valid = 1;
+            break;
+        case '3':
+            isselected_menu_valid = 1;
+            break;
+        case '0':
+            isselected_menu_valid = 1;
+            *mainmenu = 0;
+            break;
+        default:
+            break;
+        }
+    }
+}
+
+void About(int *mainmenu)
+{
+    char selected_menu;
+    int isselected_menu_valid = 0;
+    while (isselected_menu_valid == 0)
+    {
+        AboutMenu();
+        scanf(" %c", &selected_menu);
+        switch (selected_menu)
+        {
+        case '1':
             isselected_menu_valid = 1;
             break;
         case '0':
