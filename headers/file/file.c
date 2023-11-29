@@ -5,6 +5,19 @@
 const char INDEGRIDIENTS_PATH[] = "./data/ingredients.txt";
 const char RECIPIE_PATH[] = "./data/ingredients.txt";
 
+void dta()
+{
+
+    FILE *fptr;
+    fptr = fopen("./data/books.txt", "w");
+
+    char s[] = {'s', 'f', 'd', 'f'};
+
+    for (int i = 0; i < 4; i++)
+    {
+        fputc(s[i], fptr);
+    }
+}
 void readData(struct Recepie *recipies)
 {
     FILE *fptr;

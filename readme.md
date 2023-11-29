@@ -14,9 +14,6 @@ The Recipe Predict app for your kitchen companion.It is designed to make meal pl
 
 5. <h3><b>Meal Planning:</b></h3>  Plan your weekly meals by selecting recipes and organizing them into a customizable calendar.
 
-
-
-
 # To Run
 
-    gcc project.c ./headers/header.c ./headers/arrays/arrays.c ./headers/strings/strings.c ./headers/file/file.c  ; ./a
+    gcc project.c ./headers/header.c ./headers/arrays/arrays.c ./headers/strings/strings.c ./headers/file/file.c ./headers/menus/menus.c   ; ./a

@@ -3,6 +3,10 @@
 #include <windows.h>
 #include "header.h"
 
+void cls(void)
+{
+    system("cls");
+}
 
 void loading(void)
 {
@@ -37,8 +41,3 @@ void delay(unsigned long int miliseconds)
 {
     Sleep(miliseconds);
 }
-
-
-
-
-

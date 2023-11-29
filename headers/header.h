@@ -3,5 +3,6 @@
 
 void loading(void);
 void delay(unsigned long int miliseconds);
+void cls(void);
 
 #endif

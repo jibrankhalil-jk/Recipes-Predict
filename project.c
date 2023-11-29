@@ -3,57 +3,100 @@
 #include "./headers/arrays/arrays.h"
 #include "./headers/file/file.h"
 #include "./headers/strings/strings.h"
+#include "./headers/menus/menus.h"
 
-void mainMenu();
-void SearchMenu();
-void FaveroutMenu();
+void faveroute(int *mainmenu);
+void searchrecepie(int *mainmenu);
 
 int main()
 {
-    struct Recepie recipies;
-    struct Recepie *rPointer = &recipies;
-
-    readData(rPointer);
-
-    // printf("\n");
-    // mainMenu();
-    // printf("\n");
-    // SearchMenu();
-    // printf("\n");
-    // FaveroutMenu();
-
+    char selected_menu;
+    int isselected_menu_valid = 0;
+    while (isselected_menu_valid == 0)
+    {
+        mainMenu();
+        scanf(" %c", &selected_menu);
+        switch (selected_menu)
+        {
+        case '1':
+            isselected_menu_valid = 1;
+            searchrecepie(&isselected_menu_valid);
+            break;
+        case '2':
+            isselected_menu_valid = 1;
+            break;
+        case '3':
+            isselected_menu_valid = 1;
+            faveroute(&isselected_menu_valid);
+            break;
+        case '9':
+            isselected_menu_valid = 1;
+            break;
+        case '0':
+            isselected_menu_valid = 1;
+            break;
+        default:
+            break;
+        }
+    }
     return 0;
 }
 
-void mainMenu()
+void faveroute(int *mainmenu)
 {
-    printf("\n---------------------------------\n");
-    printf("-------------- Welcome ----------\n");
-    printf("---------------------------------\n");
-    printf("[1]- Search for recipes\n");
-    printf("[1]- Auto recomend recipes\n");
-    printf("[3]- Faveroute List\n");
-    printf("[9]- Settings\n");
-    printf("[0]- About\n");
-    printf("---------------------------------");
+    char selected_menu;
+    int isselected_menu_valid = 0;
+    while (isselected_menu_valid == 0)
+    {
+        FaveroutMenu();
+        scanf(" %c", &selected_menu);
+        switch (selected_menu)
+        {
+        case '1':
+            isselected_menu_valid = 1;
+            break;
+        case '2':
+            isselected_menu_valid = 1;
+            break;
+        case '3':
+            isselected_menu_valid = 1;
+            FaveroutMenu();
+            break;
+        case '0':
+            isselected_menu_valid = 1;
+            *mainmenu = 0;
+            break;
+        default:
+            break;
+        }
+    }
 }
-void SearchMenu()
+
+void searchrecepie(int *mainmenu)
 {
-    printf("\n---------------------------------\n");
-    printf("------- Search for recipes ------\n");
-    printf("---------------------------------\n");
-    printf("[1]- Search recipes\n");
-    printf("[2]- Search with indegridients\n");
-    printf("[3]- Search in Faveroute list\n");
-    printf("---------------------------------");
-}
-void FaveroutMenu()
-{
-    printf("\n---------------------------------\n");
-    printf("---------- Faveroute List -------\n");
-    printf("---------------------------------\n");
-    printf("1.\n");
-    printf("Indegridients:\n");
-    printf("Steps:\n");
-    printf("---------------------------------");
+    char selected_menu;
+    int isselected_menu_valid = 0;
+    while (isselected_menu_valid == 0)
+    {
+        SearchMenu();
+        scanf(" %c", &selected_menu);
+        switch (selected_menu)
+        {
+        case '1':
+            isselected_menu_valid = 1;
+            break;
+        case '2':
+            isselected_menu_valid = 1;
+            break;
+        case '3':
+            isselected_menu_valid = 1;
+            break;
+        case '0':
+            isselected_menu_valid = 1;
+            *mainmenu = 0;
+            break;
+        default:
+            break;
+        }
+    }
 }
