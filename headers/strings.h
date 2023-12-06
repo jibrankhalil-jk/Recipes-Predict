@@ -1,7 +1,9 @@
-#include "strings.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+
+char toCapital(char alphabet);
+char toSmall(char alphabet);
+void toUpper(char *text, int s);
+int concatenateIntegers(int a, int b);
+int asciiToInt(char a);
 
 const char capital_alphabets = 'A'; // 65 - 90
 const char small_alphabets = 'a';   // 97 - 122
@@ -29,24 +31,18 @@ void toUpper(char *text, int s)
         text[i] = toCapital(text[i]);
     }
 }
-
 int concatInt(int num1, int num2)
 {
     char strNum1[20];
     char strNum2[20];
-
     sprintf(strNum1, "%d", num1);
     sprintf(strNum2, "%d", num2);
-
     char result[40];
     strcpy(result, strNum1);
     strcat(result, strNum2);
-
     int concatenatedInt = atoi(result);
-
     return concatenatedInt;
 }
-
 int asciiToInt(char a)
 {
 

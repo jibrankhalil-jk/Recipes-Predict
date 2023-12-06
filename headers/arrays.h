@@ -1,5 +1,7 @@
-#include <stdio.h>
-#include "arrays.h"
+void printArray(char text[], int s);
+void sort_accending(int size, int *array);
+void sort_dedcending(int size, int *array);
+
 void printArray(char text[], int s)
 {
     for (int i = 0; i < s; i++)

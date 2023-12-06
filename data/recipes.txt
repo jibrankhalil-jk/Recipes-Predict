@@ -1,0 +1,5 @@
+1 -omlat egg,salt,oil,onion,tomato.
+2 -roast_chicken chicken,salt,pepper,herbs,garlic,oil.
+3 -fries salt,pepper,oil.
+4 -burger bun,meat,vegetable,mionise.
+31 -burger bun,meat,vegetable,mionise.
