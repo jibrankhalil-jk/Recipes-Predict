@@ -1,5 +1,6 @@
 void delay(unsigned long int miliseconds);
 void faveroute(int *mainmenu);
+void RecipeQuery(char query[]);
 
 void loading(void)
 {
@@ -30,71 +31,66 @@ void delay(unsigned long int miliseconds)
     Sleep(miliseconds);
 }
 
-void faveroute(int *mainmenu)
+void RecipeQuery(char query[100])
 {
-    char selected_menu;
-    int isselected_menu_valid = 0;
-    while (isselected_menu_valid == 0)
+
+    system("cls");
+    printf("\n\033[1;31m---------------------------------\n");
+    printf("------- Search recipe ------\n");
+    printf("---------------------------------\n");
+
+    int totalitemsfound = 0;
+
+    for (int i = 0; i < 10; i++)
     {
-        FaveroutMenu();
-        scanf(" %c", &selected_menu);
-        switch (selected_menu)
+        if (strcmp(dessert_recepies_list[i].title, query) == 0)
         {
-        case '1':
-            isselected_menu_valid = 1;
-            break;
-        case '2':
-            isselected_menu_valid = 1;
-            break;
-        case '3':
-            isselected_menu_valid = 1;
-            FaveroutMenu();
-            break;
-        case '0':
-            isselected_menu_valid = 1;
-            *mainmenu = 0;
-            break;
-        default:
-            break;
+            pintrecipe(dessert_recepies_list[i]);
+            totalitemsfound++;
         }
     }
-}
-void randomrec(int *mainmenu)
-{
-    char selected_menu;
-    int isselected_menu_valid = 1;
-    do
+    for (int i = 0; i < 10; i++)
     {
-        srand(time(NULL));
-        int randomfortype = rand() % 4;
-        srand(time(NULL));
-        int randomrecepie = rand() % 9;
-        struct Recipe recepie;
-
-        if (randomfortype == 0)
-            recepie = dessert_recepies_list[randomrecepie];
-        else if (randomfortype == 1)
-            recepie = pakistani_recepies_list[randomrecepie];
-        else if (randomfortype == 2)
-            recepie = dinner_recepies_list[randomrecepie];
-        else if (randomfortype == 3)
-            recepie = breakfast_recepies_list[randomrecepie];
-        else
-            recepie = snacks_recepies_list[randomrecepie];
-
-        randomrecmenu(recepie);
-        scanf(" %c", &selected_menu);
-        switch (selected_menu)
+        if (strcmp(pakistani_recepies_list[i].title, query) == 0)
         {
-        case '1':
-            continue;
-            break;
-        case '0':
-            isselected_menu_valid = 0;
-            *mainmenu = 0;
-            break;
-        default:
-            break;
+            pintrecipe(pakistani_recepies_list[i]);
+            totalitemsfound++;
         }
-    } while (isselected_menu_valid);
+    }
+    for (int i = 0; i < 10; i++)
+    {
+        if (strcmp(breakfast_recepies_list[i].title, query) == 0)
+        {
+            pintrecipe(breakfast_recepies_list[i]);
+            totalitemsfound++;
+        }
+    }
+    for (int i = 0; i < 10; i++)
+    {
+        if (strcmp(dinner_recepies_list[i].title, query) == 0)
+        {
+            pintrecipe(dinner_recepies_list[i]);
+            totalitemsfound++;
+        }
+    }
+    for (int i = 0; i < 10; i++)
+    {
+        if (strcmp(snacks_recepies_list[i].title, query) == 0)
+        {
+            pintrecipe(snacks_recepies_list[i]);
+            totalitemsfound++;
+        }
+    }
+
+    if (totalitemsfound == 0)
+    {
+        printf("\n\t Notting Found !");
+    }
+
+    printf("\n\033[1;31m---------------------------------\033[0m");
+    printf("\n       [0]- Back [1]- Main menu");
+    printf("\n\033[1;31m---------------------------------\033[0m\n");
+    printf("\t\t");
+    // getch();
+    scanf(" ");
 }
