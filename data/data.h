@@ -3,7 +3,7 @@ struct indegridient
 {
     char name[70];
 };
-struct Recepie
+struct Recipe
 {
     int id;
     char title[30];
@@ -11,7 +11,7 @@ struct Recepie
     char steps[400];
 };
 
-struct Recepie dessert_recepies_list[14] = {
+struct Recipe dessert_recepies_list[14] = {
     {1, "Gulab Jamun", {"Milk Powder", "Flour", "Yogurt", "Sugar", "Water", "Cardamom", "Rose Water", "Oil"}, "Mix milk powder, flour, and yogurt into a dough. Shape into balls and fry. Soak in sugar syrup flavored with cardamom and rose water."},
     {2, "Kheer", {"Rice", "Milk", "Sugar", "Cardamom", "Saffron", "Almonds", "Pistachios", "Raisins"}, "Cook rice in milk until soft. Add sugar, cardamom, saffron, almonds, pistachios, and raisins. Cook until thickened."},
     {3, "Barfi", {"Milk Powder", "Condensed Milk", "Ghee", "Sugar", "Cardamom", "Nuts"}, "Mix milk powder, condensed milk, and ghee. Cook with sugar, cardamom, and nuts until thick. Spread in a tray and cool. Cut into squares."},
@@ -22,7 +22,7 @@ struct Recepie dessert_recepies_list[14] = {
     {8, "Shahi Tukda", {"Bread", "Ghee", "Milk", "Sugar", "Saffron", "Cardamom", "Nuts"}, "Fry bread in ghee until golden. Soak in sugar syrup. Serve with reduced milk, saffron, cardamom, and nuts."},
     {9, "Rasmalai", {"Milk", "Sugar", "Saffron", "Cardamom", "Almonds", "Pistachios"}, "Boil milk and curdle. Knead into discs and cook in sugar syrup. Serve with saffron, cardamom, almonds, and pistachios."},
     {10, "Firni", {"Rice", "Milk", "Sugar", "Cardamom", "Saffron", "Almonds", "Pistachios"}, "Soak rice and blend. Cook with milk, sugar, cardamom, saffron, almonds, and pistachios until thick. Serve chilled."}};
-struct Recepie pakistani_recepies_list[14] = {
+struct Recipe pakistani_recepies_list[14] = {
     {1, "Biryani", {"Basmati Rice", "Chicken", "Yogurt", "Onion", "Tomato", "Ginger Garlic Paste", "Green Chilies", "Spices", "Saffron", "Mint", "Coriander", "Oil", "Potatoes"}, "Marinate chicken with spices and yogurt. Cook rice separately. Layer marinated chicken and partially cooked rice. Garnish with fried onions, mint, and saffron-infused milk. Dum cook until done."},
     {2, "Nihari", {"Beef", "Wheat Flour", "Ginger Garlic Paste", "Onion", "Spices", "Oil", "Yogurt", "Lemon", "Green Chilies", "Coriander"}, "Slow-cook beef with spices, ginger-garlic paste, and wheat flour until tender. Serve garnished with fried onions, lemon, green chilies, and fresh coriander."},
     {3, "Haleem", {"Wheat", "Barley", "Meat", "Lentils", "Spices", "Ginger Garlic Paste", "Onion", "Oil", "Yogurt", "Lemon", "Coriander"}, "Cook wheat, barley, lentils, and meat with spices until everything is soft. Blend to a thick consistency. Garnish with fried onions, lemon, and coriander."},
@@ -33,7 +33,7 @@ struct Recepie pakistani_recepies_list[14] = {
     {8, "Chicken Karahi", {"Chicken", "Tomato", "Green Chilies", "Ginger", "Garlic", "Spices", "Oil", "Coriander"}, "Cook chicken with tomatoes, green chilies, ginger, garlic, and spices in a karahi. Garnish with fresh coriander."},
     {9, "Paya", {"Goat Trotters", "Spices", "Ginger Garlic Paste", "Onion", "Tomato", "Green Chilies", "Oil", "Yogurt", "Coriander"}, "Slow-cook goat trotters with spices, ginger-garlic paste, onion, tomatoes, and green chilies. Garnish with fresh coriander."},
     {10, "Kofta", {"Minced Meat", "Onion", "Tomato", "Ginger Garlic Paste", "Spices", "Oil", "Yogurt", "Coriander"}, "Mix minced meat with spices, onion, and tomatoes. Shape into balls and cook in a gravy made with yogurt and spices. Garnish with fresh coriander."}};
-struct Recepie breakfast_recepies_list[14] = {
+struct Recipe breakfast_recepies_list[14] = {
     {1, "scrambled_eggs", {"eggs", "butter", "salt", "pepper"}, "Whisk eggs with salt and pepper. Melt butter in a pan, add eggs, and scramble until cooked."},
     {2, "pancakes", {"flour", "milk", "eggs", "baking_powder", "sugar", "butter"}, "Mix flour, milk, eggs, baking powder, and sugar until smooth. Cook spoonfuls on a hot, greased skillet until golden brown."},
     {3, "omelette", {"eggs", "cheese", "bell_pepper", "onion", "ham", "salt", "pepper"}, "Whisk eggs with salt and pepper. Pour into a hot, greased pan. Add cheese, bell pepper, onion, and ham. Fold when cooked."},
@@ -45,7 +45,7 @@ struct Recepie breakfast_recepies_list[14] = {
     {9, "bagel_with_cream_cheese", {"bagel", "cream_cheese"}, "Slice bagel, spread with cream cheese, and serve."},
     {10, "veggie_omelette", {"eggs", "spinach", "tomato", "onion", "mushrooms", "bell_pepper", "cheese", "salt", "pepper"}, "Whisk eggs with salt and pepper. Pour into a pan with spinach, tomato, onion, mushrooms, bell pepper, and cheese. Fold when cooked."}};
 
-struct Recepie dinner_recepies_list[14] = {
+struct Recipe dinner_recepies_list[14] = {
     {1, "spaghetti_bolognese", {"spaghetti", "ground_beef", "onion", "garlic", "tomato_sauce", "basil", "oregano", "salt", "pepper"}, "Cook spaghetti. Brown ground beef with onion and garlic. Add tomato sauce, basil, oregano, salt, and pepper. Simmer and serve over spaghetti."},
     {2, "grilled_salmon", {"salmon_fillets", "lemon", "olive_oil", "garlic", "dill", "salt", "pepper"}, "Marinate salmon in lemon juice, olive oil, garlic, dill, salt, and pepper. Grill until cooked through."},
     {3, "chicken_stir_fry", {"chicken_breast", "bell_pepper", "broccoli", "onion", "soy_sauce", "garlic", "ginger", "oil", "rice"}, "Stir-fry chicken, bell pepper, broccoli, and onion in oil. Add soy sauce, garlic, and ginger. Serve over rice."},
@@ -57,7 +57,7 @@ struct Recepie dinner_recepies_list[14] = {
     {9, "eggplant_parmesan", {"eggplant", "breadcrumbs", "eggs", "marinara_sauce", "mozzarella_cheese", "parmesan_cheese", "basil", "oregano", "salt", "pepper"}, "Coat eggplant in breadcrumbs and eggs. Bake until golden. Layer with marinara sauce, mozzarella cheese, parmesan cheese, basil, oregano, salt, and pepper. Bake until cheese melts."},
     {10, "vegetarian_curry", {"chickpeas", "cauliflower", "carrots", "onion", "garlic", "ginger", "coconut_milk", "curry_powder", "turmeric", "cumin", "salt", "pepper"}, "Sauté onion, garlic, and ginger. Add chickpeas, cauliflower, carrots, coconut milk, curry powder, turmeric, cumin, salt, and pepper. Simmer until vegetables are tender."}};
 
-struct Recepie snacks_recepies_list[14] = {
+struct Recipe snacks_recepies_list[14] = {
     {1, "guacamole", {"avocado", "tomato", "onion", "lime", "cilantro", "salt"}, "Mash avocados, add diced tomatoes, onions, lime juice, cilantro, and salt. Mix well."},
     {2, "caprese_salad", {"tomato", "mozzarella", "basil", "olive_oil", "balsamic_vinegar", "salt", "pepper"}, "Layer sliced tomatoes, mozzarella, and basil leaves. Drizzle with olive oil and balsamic vinegar. Season with salt and pepper."},
     {3, "hummus", {"chickpeas", "tahini", "lemon_juice", "garlic", "olive_oil", "cumin", "salt"}, "Blend chickpeas, tahini, lemon juice, garlic, olive oil, cumin, and salt until smooth."},
@@ -68,18 +68,3 @@ struct Recepie snacks_recepies_list[14] = {
     {8, "popcorn", {"popcorn_kernels", "butter", "salt"}, "Pop popcorn kernels. Melt butter and drizzle it over the popcorn. Sprinkle salt and toss to coat evenly."},
     {9, "cheese_plate", {"cheddar_cheese", "brie_cheese", "crackers", "grapes", "nuts"}, "Arrange cheddar cheese, brie cheese, crackers, grapes, and nuts on a plate."},
     {10, "veggie_sticks", {"carrots", "celery", "bell_pepper", "cucumber", "ranch_dressing"}, "Cut carrots, celery, bell pepper, and cucumber into sticks. Serve with ranch dressing for dipping."}};
-
-// void showdata();
-
-// void showdata()
-// {
-
-//     for (int i = 0; i < 9; i++)
-//     {
-//         printf("[%d] %s\n", recepies_list[i].id, recepies_list[i].title);
-//         for (int k = 0; k < 4; k++)
-//         {
-//             printf(">%d %s\n", k, recepies_list[i].indegridients[k].name);
-//         }
-//     }
-// }
