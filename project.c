@@ -1,25 +1,32 @@
 #include <stdio.h>
-#include <time.h>
-#include <windows.h>
-#include <stdlib.h>
-#include <string.h>
-#include <time.h>
-#include <conio.h>
+#include <time.h>    // time
+#include <windows.h> // rand, srand, strstr
+#include <conio.h>   // getch
 
 #include "./data/data.h"
 #include "./headers/menus.h"
 #include "./headers/header.h"
 
 void faveroute(int *mainmenu);
-void searchrecepie(int *mainmenu);
+void searchrecipe(int *mainmenu);
 void settings(int *mainmenu);
 void About(int *mainmenu);
 void About(int *mainmenu);
 void divindegs(char buffer[]);
 void randomrec(int *mainmenu);
 void searchwithname(int *prevmenu);
+int StartProgram();
+int StartProgram();
 
 int main()
+{
+    // printf(">%s<", strstr("chicken biryani", "c"));
+    // stringsearch("chicken biryan", "bir");
+    StartProgram();
+    return 0;
+}
+
+int StartProgram()
 {
     char selected_menu;
     int isselected_menu_valid = 0;
@@ -31,7 +38,7 @@ int main()
         switch (selected_menu)
         {
         case '1':
-            searchrecepie(&isselected_menu_valid);
+            searchrecipe(&isselected_menu_valid);
             break;
         case '4':
             isselected_menu_valid = 1;
@@ -64,64 +71,59 @@ void randomrec(int *mainmenu)
     do
     {
         srand(time(NULL));
-        int randomfortype = rand() % 4;
+        int randomrecipe = rand() % 10 ; // 0 - 9
         srand(time(NULL));
-        int randomrecepie = rand() % 9;
-        struct Recipe recepie;
+        int randomfortype =  rand() % 5; // 0 - 4
+        struct Recipe recipe; 
+
+
 
         if (randomfortype == 0)
-            recepie = dessert_recepies_list[randomrecepie];
+            recipe = dessert_recipes_list[randomrecipe];
         else if (randomfortype == 1)
-            recepie = pakistani_recepies_list[randomrecepie];
+            recipe = pakistani_recipes_list[randomrecipe];
         else if (randomfortype == 2)
-            recepie = dinner_recepies_list[randomrecepie];
+            recipe = dinner_recipes_list[randomrecipe];
         else if (randomfortype == 3)
-            recepie = breakfast_recepies_list[randomrecepie];
-        else
-            recepie = snacks_recepies_list[randomrecepie];
+            recipe = breakfast_recipes_list[randomrecipe];
+        else if (randomfortype == 4)
+            recipe = snacks_recipes_list[randomrecipe];
 
-        randomrecmenu(recepie);
-        scanf(" %c", &selected_menu);
+        randomrecmenu(recipe);
+        // scanf(" %c", &selected_menu);
+        selected_menu = getch();
         switch (selected_menu)
         {
-        case '1':
-            continue;
-            break;
         case '0':
             isselected_menu_valid = 0;
             *mainmenu = 0;
             break;
         default:
-            break;
+            continue;
         }
     } while (isselected_menu_valid);
 }
 
-void searchrecepie(int *mainmenu)
+void searchrecipe(int *mainmenu)
 {
     char selected_menu;
     int isselected_menu_valid = 0;
     while (isselected_menu_valid == 0)
     {
         SearchMenu();
-        scanf(" %c", &selected_menu);
+        // scanf(" %c", &selected_menu);
+        selected_menu = getch();
         switch (selected_menu)
         {
         case '1':
             searchwithname(&isselected_menu_valid);
             break;
-        // case '2':
-        //     isselected_menu_valid = 1;
-        //     break;
-        // case '3':
-        //     isselected_menu_valid = 1;
-        //     break;
         case '0':
             isselected_menu_valid = 1;
             *mainmenu = 0;
             break;
         default:
-            break;
+            continue;
         }
     }
 }
@@ -133,19 +135,47 @@ void searchwithname(int *prevmenu)
     while (isselected_menu_valid == 0)
     {
         SearchWithNameMenu();
-        scanf("%s", &selected_menu);
+        // scanf("%s", &selected_menu);
+        fgets(selected_menu, sizeof(selected_menu), stdin);
+
+        // Remove the newline character if present
+        if (selected_menu[strlen(selected_menu) - 1] == '\n')
+        {
+            selected_menu[strlen(selected_menu) - 1] = '\0';
+        }
+
         switch (selected_menu[0])
         {
         case '1':
-            *prevmenu = 1;
-            isselected_menu_valid = 1;
+            if (strlen(selected_menu) > 1)
+            {
+
+                // printf("\n>>%d", strlen(selected_menu));
+                continue;
+            }
+            else
+            {
+                *prevmenu = 1;
+                isselected_menu_valid = 1;
+            }
             break;
         case '0':
-            isselected_menu_valid = 1;
-            // *prevmenu = 1;
+            if (strlen(selected_menu) > 1)
+            {
+
+                // printf("\n>>%d", strlen(selected_menu));
+                continue;
+            }
+            else
+            {
+                isselected_menu_valid = 1;
+            }
             break;
         default:
-            RecipeQuery(selected_menu);
+            if (strlen(selected_menu) < 1)
+                continue;
+            else
+                RecipeQuery(selected_menu);
             break;
         }
     }
@@ -158,7 +188,8 @@ void settings(int *mainmenu)
     while (isselected_menu_valid == 0)
     {
         SettingsMenu();
-        scanf(" %c", &selected_menu);
+        // scanf(" %c", &selected_menu);
+        selected_menu = getch();
         switch (selected_menu)
         {
         case '1':
@@ -187,7 +218,8 @@ void About(int *mainmenu)
     while (isselected_menu_valid == 0)
     {
         AboutMenu();
-        scanf(" %c", &selected_menu);
+        // scanf(" %c", &selected_menu);
+        selected_menu = getch();
         switch (selected_menu)
         {
         case '1':

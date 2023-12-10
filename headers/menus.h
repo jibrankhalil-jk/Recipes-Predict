@@ -1,3 +1,4 @@
+void printrecipe(struct Recipe recipe);
 void mainMenu()
 {
     system("cls");
@@ -12,7 +13,6 @@ void mainMenu()
     printf("\033[1;33m---------------------------------\033[0m\n");
     printf("\t\t");
 }
-
 void SearchMenu()
 {
     system("cls");
@@ -53,22 +53,16 @@ void FaveroutMenu()
     printf("\n\033[1;34m---------------------------------\033[0m\n");
     printf("\t\t");
 }
-void randomrecmenu(struct Recipe recepie)
+void randomrecmenu(struct Recipe recipe)
 {
     system("cls");
     printf("\n\033[1;34m---------------------------------\n");
     printf("---------- Random Recipe -------\n");
     printf("---------------------------------\n\033[0m");
-    printf("\033[1;36mId: %d\n", recepie.id);
-    printf("Title: %s.\n", recepie.title);
-    printf("Indegridients: ");
-    for (int i = 0; strcmp(recepie.indegridients[i].name, "") != 0; i++)
-    {
-        printf("%s ", recepie.indegridients[i].name);
-    }
-    printf("\nSteps: %s\033[0m\n", recepie.steps);
+    printrecipe(recipe);
     printf("\033[1;34m---------------------------------\033[0m");
-    printf("\n\t [1]- random  [0]- Back");
+    printf("\n\t  [0]- Back");
+    printf("\n press any key, other than 0 for \n\tnext random recipe");
     printf("\n\033[1;34m---------------------------------\033[0m\n");
     printf("\t\t");
 }
@@ -95,16 +89,14 @@ void AboutMenu()
     printf("\n\t\t\t [0]- Back");
     printf("\n\t\t\033[1;36m---------------------------------\033[0m\n");
 }
-
-void pintrecipe(struct Recipe recipe)
+void printrecipe(struct Recipe recipe)
 {
-    printf("\033[1;36mId: %d\n", recipe.id);
-    printf("Title: %s.\n", recipe.title);
-    printf("Indegridients: ");
+    printf("\033[1;32mId: \033[1;36m%d\n\033[1;32mTitle: \033[1;36m%s\n", recipe.id, recipe.title);
+    printf("\033[1;32mIndegridients:\033[1;36m");
     for (int i = 0; strcmp(recipe.indegridients[i].name, "") != 0; i++)
     {
-        printf("%s ", recipe.indegridients[i].name);
+        printf("\n[%d] %s", i + 1, recipe.indegridients[i].name);
     }
-    printf("\nSteps: %s\033[0m\n", recipe.steps);
+    printf("\n\033[1;32mSteps: \033[1;36m%s\033[0m\n", recipe.steps);
     printf("\033[1;34m---------------------------------\033[0m\n");
 }
