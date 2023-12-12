@@ -1,16 +1,14 @@
-
-struct indegridient
+struct Ingredient
 {
-    char name[70];
+    char name[40];
 };
 struct Recipe
 {
     int id;
     char title[30];
-    struct indegridient indegridients[20];
+    struct Ingredient indegridients[20];
     char steps[400];
 };
-
 struct Recipe dessert_recipes_list[10] = {
     {1, "gulab jamun", {"milk", "flour", "yogurt", "sugar", "water", "cardamom", "rose water", "oil"}, "Mix milk powder, flour, and yogurt into a dough. Shape into balls and fry. Soak in sugar syrup flavored with cardamom and rose water."},
     {2, "kheer", {"rice", "milk", "sugar", "cardamom", "saffron", "almonds", "pistachios", "raisins"}, "Cook rice in milk until soft. Add sugar, cardamom, saffron, almonds, pistachios, and raisins. Cook until thickened."},
@@ -26,7 +24,7 @@ struct Recipe pakistani_recipes_list[10] = {
     {1, "biryani", {"rice", "chicken", "yogurt", "onion", "tomato", "ginger garlic paste", "green chilies", "spices", "saffron", "mint", "coriander", "oil", "potatoes"}, "Marinate chicken with spices and yogurt. Cook rice separately. Layer marinated chicken and partially cooked rice. Garnish with fried onions, mint, and saffron-infused milk. Dum cook until done."},
     {2, "nihari", {"beef", "wheat flour", "ginger garlic paste", "onion", "spices", "oil", "yogurt", "lemon", "green chilies", "coriander"}, "Slow-cook beef with spices, ginger-garlic paste, and wheat flour until tender. Serve garnished with fried onions, lemon, green chilies, and fresh coriander."},
     {3, "haleem", {"wheat", "barley", "meat", "lentils", "spices", "ginger garlic paste", "onion", "oil", "yogurt", "lemon", "coriander"}, "Cook wheat, barley, lentils, and meat with spices until everything is soft. Blend to a thick consistency. Garnish with fried onions, lemon, and coriander."},
-    {4, "samosa", {"flour", "potatoes", "peas", "spices", "oil", "onion", "ginger garlic paste"}, "Make a dough with flour, fill with a mixture of mashed potatoes, peas, and spices. Shape into triangles and deep-fry until golden brown."},
+    {4, "samosa", {"flour", "potatoes", "peas", "spices", "oil", "onion", "ginger","garlic"}, "Make a dough with flour, fill with a mixture of mashed potatoes, peas, and spices. Shape into triangles and deep-fry until golden brown."},
     {5, "chapli kebab", {"minced beef", "onion", "tomato", "green chilies", "egg", "spices", "coriander", "mint", "oil"}, "Mix minced beef with spices, onions, tomatoes, green chilies, egg, coriander, and mint. Shape into flat patties and shallow fry until cooked."},
     {6, "aloo gosht", {"mutton", "potatoes", "onion", "tomato", "ginger garlic paste", "spices", "oil", "yogurt"}, "Cook mutton with ginger-garlic paste, spices, onion, and tomatoes until tender. Add potatoes and cook until done."},
     {7, "saag", {"mustard leaves", "spinach", "fenugreek leaves", "onion", "tomato", "green chilies", "spices", "oil"}, "Boil and finely chop mustard leaves, spinach, and fenugreek leaves. Cook with spices, onion, tomatoes, and green chilies. Garnish with butter or cream."},

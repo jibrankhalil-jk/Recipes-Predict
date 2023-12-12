@@ -21,7 +21,6 @@ void SearchMenu()
     printf("---------------------------------\n");
     printf("\033[1;32m[1]- Search recipes\n");
     printf("\033[1;33m[2]- Search with indegridients\n");
-    printf("\033[1;34m[3]- Search in Faveroute list\n");
     printf("\033[1;31m---------------------------------\033[0m");
     printf("\n\t [0]- Back");
     printf("\n\033[1;31m---------------------------------\033[0m\n");
@@ -36,6 +35,19 @@ void SearchWithNameMenu()
     printf("\t\033[1;32m  Search a Recipe \n");
     printf("\033[1;31m---------------------------------\033[0m");
     printf("\n       [0]- Back [1]- Main menu");
+    printf("\n\033[1;31m---------------------------------\033[0m\n");
+    printf("\t\t");
+}
+void SearchWithIngredient()
+{
+    system("cls");
+    printf("\n\033[1;31m---------------------------------\n");
+    printf("---- Search with indegridients ---\n");
+    printf("---------------------------------\n");
+    printf("\t\033[1;32m  Search a Recipe \n");
+    printf("\033[1;31m---------------------------------\033[0m");
+    printf("\n\033[1;33m Add space between indegridients");
+    printf("\n\033[1;0m       [0]- Back [1]- Main menu");
     printf("\n\033[1;31m---------------------------------\033[0m\n");
     printf("\t\t");
 }
