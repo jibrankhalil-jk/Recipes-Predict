@@ -2,7 +2,7 @@
 int searchfun(char data[], char query[]);
 void IngredientQuery(char query[]);
 int searchinlistindeg(int *total, struct Ingredient items[], struct Recipe recipe, int itemsize);
-
+void searchin(int *datafound, struct Ingredient *items, struct Recipe list[10], int i);
 void RecipeQuery(char query[])
 {
     system("cls");
@@ -93,15 +93,11 @@ void IngredientQuery(char query[])
     printf("\n\033[1;31m---------------------------------\n");
     printf("---- Search with indegridients ---\n");
     printf("---------------------------------\n");
-    // printf("\n>%s<", query);
-
     struct Ingredient qindeg[10];
     int datafound = 0;
     int i = 0;
 
     char *item = strtok(query, " ");
-    // printf("\n><");
-
     while (item != NULL)
     {
         if (item[0] == '\0')
@@ -124,20 +120,11 @@ void IngredientQuery(char query[])
 
     // }
 
-    int totalIngredients = 0;
-    int matchedIngredients = searchinlistindeg(&totalIngredients, qindeg, pakistani_recipes_list[0], i);
-    // printf("\ntotal match : %d", matchedIngredients);
-    // printf("\ntotal  : %d\n", totalIngredients);
-
-    if (totalIngredients >= 4)
-    {
-        // if (matchedIngredients >= totalIngredients - 2)
-        if (matchedIngredients >= totalIngredients * 0.8) // if 80% of ind are same
-        {
-            printrecipe(pakistani_recipes_list[0]);
-            datafound = 1;
-        }
-    }
+    searchin(&datafound, qindeg, dessert_recipes_list, i);
+    searchin(&datafound, qindeg, pakistani_recipes_list, i);
+    searchin(&datafound, qindeg, breakfast_recipes_list, i);
+    searchin(&datafound, qindeg, dinner_recipes_list, i);
+    searchin(&datafound, qindeg, snacks_recipes_list, i);
 
     if (datafound != 1)
     {
@@ -187,4 +174,26 @@ int searchinlistindeg(int *total, struct Ingredient items[], struct Recipe recip
 //         }
 //     }
 //     return 0;
-// }
+// }'
+
+void searchin(int *datafound, struct Ingredient *items, struct Recipe list[10], int i)
+{
+    for (int dataindex = 0; dataindex < 10; dataindex++)
+    {
+        int totalIngredients = 0;
+        int matchedIngredients = searchinlistindeg(&totalIngredients, items, list[dataindex], i);
+
+        if (totalIngredients >= 4)
+        {
+            // if (matchedIngredients >= totalIngredients - 2)
+            if (matchedIngredients >= totalIngredients * 0.8) // if 80% of ind are same
+            {
+                printf("\ntotal match : %d", matchedIngredients);
+                printf("\ntotal  : %d\n", totalIngredients);
+
+                printrecipe(list[dataindex]);
+                *datafound = 1;
+            }
+        }
+    }
+}

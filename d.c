@@ -1,1 +1,1 @@
-rice chicken yogurt onion tomato ginger green chilies spices saffron mint coriander oil potatoes
+rice chicken yogurt onion tomato ginger green spices saffron mint coriander oil potatoes

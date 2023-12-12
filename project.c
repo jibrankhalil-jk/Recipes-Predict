@@ -219,8 +219,7 @@ void searchwithind(int *prevmenu)
             //  if (isdigit(selected_menu[1]) != 1)
             {
                 IngredientQuery(selected_menu);
-                isselected_menu_valid = 0;
-                // continue;
+                continue;
                 // strcpy(selected_menu, "");
                 // continue;
                 // isselected_menu_valid = 1;
