@@ -170,19 +170,23 @@ void searchwithname(int *prevmenu)
 }
 void searchwithind(int *prevmenu)
 {
-    char selected_menu[2];
+    char selected_menu[100];
     int isselected_menu_valid = 0;
     while (isselected_menu_valid == 0)
     {
+
         SearchWithIngredient();
         // scanf("%s", &selected_menu);
-        // fgets(selected_menu, sizeof(selected_menu), stdin);
-        gets(selected_menu);
-
+        fgets(selected_menu, sizeof(selected_menu), stdin);
         // Remove the newline character if present
         if (selected_menu[strlen(selected_menu) - 1] == '\n')
         {
             selected_menu[strlen(selected_menu) - 1] = '\0';
+        }
+
+        if (strlen(selected_menu) < 1)
+        {
+            continue;
         }
 
         switch (selected_menu[0])
@@ -211,15 +215,15 @@ void searchwithind(int *prevmenu)
             }
             break;
         default:
-            if (strlen(selected_menu) < 1)
-            {
-                continue;
-            }
-            else
+
             //  if (isdigit(selected_menu[1]) != 1)
             {
                 IngredientQuery(selected_menu);
+                isselected_menu_valid = 0;
                 // continue;
+                // strcpy(selected_menu, "");
+                // continue;
+                // isselected_menu_valid = 1;
             }
             break;
         }
