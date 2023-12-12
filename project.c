@@ -7,27 +7,20 @@
 #include "./headers/menus.h"
 #include "./headers/header.h"
 
-void faveroute(int *mainmenu);
-void searchforrecipe(int *mainmenu);
-void settings(int *mainmenu);
-void About(int *mainmenu);
-void About(int *mainmenu);
-void divindegs(char buffer[]);
+int startProgram();
 void randomrec(int *mainmenu);
+void searchforrecipe(int *mainmenu);
 void searchwithname(int *prevmenu);
-int StartProgram();
-int StartProgram();
 void searchwithind(int *prevmenu);
+void about(int *mainmenu);
 
 int main()
 {
-    // printf(">%s<", strstr("chicken biryani", "c"));
-    // stringsearch("chicken biryan", "bir");
-    StartProgram();
+    startProgram();
     return 0;
 }
 
-int StartProgram()
+int startProgram()
 {
     char selected_menu;
     int isselected_menu_valid = 0;
@@ -41,17 +34,13 @@ int StartProgram()
         case '1':
             searchforrecipe(&isselected_menu_valid);
             break;
-        case '4':
+        case '2':
             isselected_menu_valid = 1;
             randomrec(&isselected_menu_valid);
             break;
-        case '9':
-            isselected_menu_valid = 1;
-            settings(&isselected_menu_valid);
-            break;
         case '0':
             isselected_menu_valid = 1;
-            About(&isselected_menu_valid);
+            about(&isselected_menu_valid);
             break;
         case 'x':
             isselected_menu_valid = 1;
@@ -63,7 +52,6 @@ int StartProgram()
     }
     return 0;
 }
-
 void randomrec(int *mainmenu)
 
 {
@@ -102,7 +90,6 @@ void randomrec(int *mainmenu)
         }
     } while (isselected_menu_valid);
 }
-
 void searchforrecipe(int *mainmenu)
 {
     char selected_menu;
@@ -129,7 +116,6 @@ void searchforrecipe(int *mainmenu)
         }
     }
 }
-
 void searchwithname(int *prevmenu)
 {
     char selected_menu[20];
@@ -182,7 +168,6 @@ void searchwithname(int *prevmenu)
         }
     }
 }
-
 void searchwithind(int *prevmenu)
 {
     char selected_menu[2];
@@ -192,7 +177,7 @@ void searchwithind(int *prevmenu)
         SearchWithIngredient();
         // scanf("%s", &selected_menu);
         // fgets(selected_menu, sizeof(selected_menu), stdin);
-         gets(selected_menu);
+        gets(selected_menu);
 
         // Remove the newline character if present
         if (selected_menu[strlen(selected_menu) - 1] == '\n')
@@ -227,45 +212,20 @@ void searchwithind(int *prevmenu)
             break;
         default:
             if (strlen(selected_menu) < 1)
+            {
                 continue;
+            }
             else
+            //  if (isdigit(selected_menu[1]) != 1)
+            {
                 IngredientQuery(selected_menu);
+                // continue;
+            }
             break;
         }
     }
 }
-
-void settings(int *mainmenu)
-{
-    char selected_menu;
-    int isselected_menu_valid = 0;
-    while (isselected_menu_valid == 0)
-    {
-        SettingsMenu();
-        // scanf(" %c", &selected_menu);
-        selected_menu = getch();
-        switch (selected_menu)
-        {
-        case '1':
-            isselected_menu_valid = 1;
-            break;
-        case '2':
-            isselected_menu_valid = 1;
-            break;
-        case '3':
-            isselected_menu_valid = 1;
-            break;
-        case '0':
-            isselected_menu_valid = 1;
-            *mainmenu = 0;
-            break;
-        default:
-            break;
-        }
-    }
-}
-
-void About(int *mainmenu)
+void about(int *mainmenu)
 {
     char selected_menu;
     int isselected_menu_valid = 0;

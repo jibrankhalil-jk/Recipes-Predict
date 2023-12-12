@@ -6,8 +6,7 @@ void mainMenu()
     printf("\033[1;33m-------------- Welcome ----------\n");
     printf("\033[1;33m---------------------------------\n");
     printf("\033[1;31m[1]- Search for recipes\n");
-    printf("\033[1;34m[4]- Random\n");
-    printf("\033[1;35m[9]- Settings\n");
+    printf("\033[1;34m[2]- Random\n");
     printf("\033[1;36m[0]- About\n");
     printf("\033[1;m[x]- Exit\n");
     printf("\033[1;33m---------------------------------\033[0m\n");
@@ -51,20 +50,6 @@ void SearchWithIngredient()
     printf("\n\033[1;31m---------------------------------\033[0m\n");
     printf("\t\t");
 }
-void FaveroutMenu()
-{
-    system("cls");
-    printf("\n\033[1;34m---------------------------------\n");
-    printf("---------- Faveroute List -------\n");
-    printf("---------------------------------\033[0m\n");
-    printf("1.\n");
-    printf("Indegridients:\n");
-    printf("Steps:\n");
-    printf("\033[1;34m---------------------------------\033[0m");
-    printf("\n\t [0]- Back");
-    printf("\n\033[1;34m---------------------------------\033[0m\n");
-    printf("\t\t");
-}
 void randomrecmenu(struct Recipe recipe)
 {
     system("cls");
@@ -76,18 +61,6 @@ void randomrecmenu(struct Recipe recipe)
     printf("\n\t  [0]- Back");
     printf("\n press any key, other than 0 for \n\tnext random recipe");
     printf("\n\033[1;34m---------------------------------\033[0m\n");
-    printf("\t\t");
-}
-void SettingsMenu()
-{
-    system("cls");
-    printf("\n\033[1;35m---------------------------------\n");
-    printf("------------- Settings ----------\n");
-    printf("---------------------------------\033[0m\n");
-    printf("Steps:\n");
-    printf("\033[1;35m---------------------------------\033[0m");
-    printf("\n\t [0]- Back");
-    printf("\n\033[1;35m---------------------------------\033[0m\n");
     printf("\t\t");
 }
 void AboutMenu()
