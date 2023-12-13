@@ -19,7 +19,7 @@ struct Recipe dessert_recipes_list[10] = {
     {7, "gajar halwa", {"carrots", "milk", "sugar", "ghee", "cardamom", "nuts"}, "Grate carrots and cook with milk until soft. Add sugar, ghee, cardamom, and nuts. Cook until thickened."},
     {8, "shahi tukda", {"bread", "ghee", "milk", "sugar", "saffron", "cardamom", "nuts"}, "Fry bread in ghee until golden. Soak in sugar syrup. Serve with reduced milk, saffron, cardamom, and nuts."},
     {9, "rasmalai", {"milk", "sugar", "saffron", "cardamom", "almonds", "pistachios"}, "Boil milk and curdle. Knead into discs and cook in sugar syrup. Serve with saffron, cardamom, almonds, and pistachios."},
-    {10, "firni", {"rice", "milk", "sugar", "cardamom", "saffron", "almonds", "pistachios"}, "Soak rice and blend. Cook with milk, sugar, cardamom, saffron, almonds, and pistachios until thick. Serve chilled."}};
+    {10, "firni", {"rice", "milk", "sugar", "cardamom", "saffron", "almond", "pistachios"}, "Soak rice and blend. Cook with milk, sugar, cardamom, saffron, almonds, and pistachios until thick. Serve chilled."}};
 struct Recipe pakistani_recipes_list[10] = {
     {1, "biryani", {"rice", "chicken", "yogurt", "onion", "tomato", "ginger", "garlic", "chilies", "spices", "saffron", "mint", "coriander", "oil", "potatoes"}, "Marinate chicken with spices and yogurt. Cook rice separately. Layer marinated chicken and partially cooked rice. Garnish with fried onions, mint, and saffron-infused milk. Dum cook until done."},
     {2, "nihari", {"beef", "wheat flour", "ginger garlic paste", "onion", "spices", "oil", "yogurt", "lemon", "green chilies", "coriander"}, "Slow-cook beef with spices, ginger-garlic paste, and wheat flour until tender. Serve garnished with fried onions, lemon, green chilies, and fresh coriander."},

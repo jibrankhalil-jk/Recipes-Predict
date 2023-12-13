@@ -61,8 +61,9 @@ void randomrec(int *mainmenu)
     {
         srand(time(NULL));
         int randomrecipe = rand() % 10; // 0 - 9
-        srand(time(NULL));
+
         int randomfortype = rand() % 5; // 0 - 4
+        
         struct Recipe recipe;
 
         if (randomfortype == 0)

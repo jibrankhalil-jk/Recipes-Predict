@@ -17,3 +17,7 @@ The Recipe Predict app for your kitchen companion.It is designed to make meal pl
 # To Run
 
     gcc project.c ./headers/header.c ./headers/arrays/arrays.c ./headers/strings/strings.c ./headers/file/file.c ./headers/menus/menus.c   ; ./a
+
+# sample input 
+
+    rice chicken yogurt onion tomato ginger chilles spices saffron mint coriander oil potatoes

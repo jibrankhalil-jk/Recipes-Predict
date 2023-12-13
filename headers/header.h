@@ -3,6 +3,7 @@ int searchfun(char data[], char query[]);
 void IngredientQuery(char query[]);
 int searchinlistindeg(int *total, struct Ingredient items[], struct Recipe recipe, int itemsize);
 void searchin(int *datafound, struct Ingredient *items, struct Recipe list[10], int i);
+
 void RecipeQuery(char query[])
 {
     system("cls");
@@ -83,8 +84,6 @@ int searchfun(char data[], char query[])
     {
         return strcmp(data, strstr(data, query));
     }
-
-    // return strcmp(data, query);
 }
 
 void IngredientQuery(char query[])
@@ -117,7 +116,6 @@ void IngredientQuery(char query[])
     // for (int j = 0; j < i; j++)
     // {
     //     printf("\n..>%s", qindeg[j].name);
-
     // }
 
     searchin(&datafound, qindeg, dessert_recipes_list, i);
@@ -130,8 +128,6 @@ void IngredientQuery(char query[])
     {
         printf("\n\033[1;41m \tNothing Found!\t \033[0m\n");
     }
-    // printf("\ntotal match : %d\n", matchedIngredients);
-    // printf("\ntotal  : %d\n", totalIngredients);
 
     printf("\n\033[1;31m---------------------------------\033[0m\n");
     printf("\n\033[1;33m Add space between Ingredients");
@@ -164,17 +160,6 @@ int searchinlistindeg(int *total, struct Ingredient items[], struct Recipe recip
     *total = t;
     return output;
 }
-// int is_dublicate(struct Ingredient items[10], int index, char name[20])
-// {
-//     for (int i = index; i < 0; i--)
-//     {
-//         if (items[i].name == name)
-//         {
-//             return 1;
-//         }
-//     }
-//     return 0;
-// }'
 
 void searchin(int *datafound, struct Ingredient *items, struct Recipe list[10], int i)
 {
@@ -186,7 +171,7 @@ void searchin(int *datafound, struct Ingredient *items, struct Recipe list[10], 
         if (totalIngredients >= 4)
         {
             // if (matchedIngredients >= totalIngredients - 2)
-            if (matchedIngredients >= totalIngredients * 0.8) // if 80% of ind are same
+            if (matchedIngredients >= totalIngredients * 0.7) // if 80% of ind are same
             {
                 printf("\ntotal match : %d", matchedIngredients);
                 printf("\ntotal  : %d\n", totalIngredients);
