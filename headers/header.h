@@ -1,4 +1,3 @@
-
 int searchfun(char data[], char query[]);
 void IngredientQuery(char query[]);
 int searchinlistindeg(int *total, struct Ingredient items[], struct Recipe recipe, int itemsize);
@@ -171,7 +170,7 @@ void searchin(int *datafound, struct Ingredient *items, struct Recipe list[10], 
         if (totalIngredients >= 4)
         {
             // if (matchedIngredients >= totalIngredients - 2)
-            if (matchedIngredients >= totalIngredients * 0.7) // if 80% of ind are same
+            if (matchedIngredients >= totalIngredients * 0.7) // if 70% of ind are same
             {
                 printf("\ntotal match : %d", matchedIngredients);
                 printf("\ntotal  : %d\n", totalIngredients);

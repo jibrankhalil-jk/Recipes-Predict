@@ -36,7 +36,7 @@ struct Recipe breakfast_recipes_list[10] = {
     {2, "pancakes", {"flour", "milk", "eggs", "baking powder", "sugar", "butter"}, "Mix flour, milk, eggs, baking powder, and sugar until smooth. Cook spoonfuls on a hot, greased skillet until golden brown."},
     {3, "omelette", {"eggs", "cheese", "bell pepper", "onion", "ham", "salt", "pepper"}, "Whisk eggs with salt and pepper. Pour into a hot, greased pan. Add cheese, bell pepper, onion, and ham. Fold when cooked."},
     {4, "fruit smoothie", {"banana", "berries", "yogurt", "milk", "honey"}, "Blend banana, berries, yogurt, milk, and honey until smooth."},
-    {5, "Tea", {"water", "tea_leaves", "milk", "sugar"}, "Boil water in a pot. Add tea leaves, crushed cardamom, and grated ginger. Let it simmer for a few minutes. Pour in milk and bring to a boil. Add sugar according to taste. Strain and serve hot."},
+    {5, "tea", {"water", "tea_leaves", "milk", "sugar"}, "Boil water in a pot. Add tea leaves, crushed cardamom, and grated ginger. Let it simmer for a few minutes. Pour in milk and bring to a boil. Add sugar according to taste. Strain and serve hot."},
     {6, "french toast", {"bread", "eggs", "milk", "cinnamon", "vanilla extract", "butter"}, "Whisk eggs with milk, cinnamon, and vanilla extract. Dip bread slices in the mixture. Cook in a buttered skillet until golden."},
     {7, "breakfast burrito", {"tortilla", "eggs", "bacon", "cheese", "salsa", "avocado"}, "Scramble eggs. Fill tortilla with eggs, bacon, cheese, salsa, and avocado. Roll up and serve."},
     {8, "granola with yogurt", {"granola", "yogurt", "berries", "honey"}, "Layer granola, yogurt, berries, and honey in a bowl."},

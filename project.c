@@ -19,6 +19,7 @@ int main()
     startProgram();
     return 0;
 }
+
 int startProgram()
 {
     char selected_menu;
@@ -62,7 +63,7 @@ void randomrec(int *mainmenu)
         int randomrecipe = rand() % 10; // 0 - 9
 
         int randomfortype = rand() % 5; // 0 - 4
-        
+
         struct Recipe recipe;
 
         if (randomfortype == 0)
@@ -174,7 +175,6 @@ void searchwithind(int *prevmenu)
     int isselected_menu_valid = 0;
     while (isselected_menu_valid == 0)
     {
-
         SearchWithIngredient();
         // scanf("%s", &selected_menu);
         fgets(selected_menu, sizeof(selected_menu), stdin);
@@ -194,7 +194,6 @@ void searchwithind(int *prevmenu)
         case '1':
             if (strlen(selected_menu) > 1)
             {
-
                 // printf("\n>>%d", strlen(selected_menu));
                 continue;
             }
