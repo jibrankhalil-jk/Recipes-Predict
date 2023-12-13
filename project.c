@@ -19,7 +19,6 @@ int main()
     startProgram();
     return 0;
 }
-
 int startProgram()
 {
     char selected_menu;

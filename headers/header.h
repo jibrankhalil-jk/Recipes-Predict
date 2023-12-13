@@ -180,5 +180,10 @@ void searchin(int *datafound, struct Ingredient *items, struct Recipe list[10], 
                 *datafound = 1;
             }
         }
+        else if (matchedIngredients >= totalIngredients)
+        {
+            printrecipe(list[dataindex]);
+            *datafound = 1;
+        }
     }
 }
